@@ -14,9 +14,10 @@ const WalletPage: React.FC = () => {
         const initializeWallet = async () => {
             try {
                 const setupData = await beginZkLogin('Google');
-                
+                console.log('setupData', setupData);
+
                 // Listen for the JWT from the Telegram Mini App
-                miniApp.onEvent('message', async (message) => {
+                miniApp.on('message', async (message: any) => {
                     if (message.data) {
                         const { jwt } = JSON.parse(message.data);
                         if (jwt) {

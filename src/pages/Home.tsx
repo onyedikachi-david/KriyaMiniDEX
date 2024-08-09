@@ -10,7 +10,7 @@ const DeFiMiniApp: React.FC = () => {
         <div className="h-screen bg-white font-sans">
             <Header title="DeFi Mini" />
             <main className="p-4 overflow-y-auto" style={{ height: 'calc(100% - 120px)' }}>
-                <WalletBalance />
+                <WalletBalance balance={String(0)} />
                 <ActionButtons />
                 <TransactionHistory />
             </main>
