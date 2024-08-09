@@ -1,10 +1,16 @@
 import type { ComponentType, JSX } from 'react';
 
-import { IndexPage } from '@/pages/IndexPage/IndexPage';
+// import { IndexPage } from '@/pages/IndexPage/IndexPage';
 import { InitDataPage } from '@/pages/InitDataPage/InitDataPage';
 import { LaunchParamsPage } from '@/pages/LaunchParamsPage/LaunchParamsPage.tsx';
 import { ThemeParamsPage } from '@/pages/ThemeParamsPage/ThemeParamsPage.tsx';
 import { TONConnectPage } from '@/pages/TONConnectPage/TONConnectPage';
+import DeFiMiniApp from '@/pages/Home';
+import LiquidityPage from '@/pages/Liquidity';
+import PortfolioPage from '@/pages/Portfolio';
+import SwapPage from '@/pages/Swap';
+import WalletPage from '@/pages/Wallet';
+import StakingPage from '@/pages/Staking';
 
 interface Route {
   path: string;
@@ -14,7 +20,13 @@ interface Route {
 }
 
 export const routes: Route[] = [
-  { path: '/', Component: IndexPage },
+  { path: '/', Component: DeFiMiniApp, title: 'Home' },
+  { path: '/wallet', Component: WalletPage, title: 'Wallet' },
+  { path: '/swap', Component: SwapPage, title: 'Swap' },
+  { path: '/liquidity', Component: LiquidityPage, title: 'Liquidity' },
+  { path: '/staking', Component: StakingPage, title: 'Staking' },
+  { path: '/portfolio', Component: PortfolioPage, title: 'Portfolio' },
+  // { path: '/', Component: IndexPage },
   { path: '/init-data', Component: InitDataPage, title: 'Init Data' },
   { path: '/theme-params', Component: ThemeParamsPage, title: 'Theme Params' },
   { path: '/launch-params', Component: LaunchParamsPage, title: 'Launch Params' },
